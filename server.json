@@ -1,14 +1,37 @@
 {
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.meltingpixelsai/harvey-tools",
-  "description": "Web scraping, code review, content generation, and analysis tools for AI agents. Pay-per-call USDC.",
+  "description": "Web scraping, code review, content generation, and analysis tools. Pay-per-call USDC.",
+  "repository": {
+    "url": "https://github.com/meltingpixelsai/harvey-tools",
+    "source": "github"
+  },
+  "version": "1.0.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@meltingpixels/harvey-tools",
+      "version": "1.0.0",
       "transport": {
         "type": "streamable-http",
         "url": "https://tools.rugslayer.com/mcp"
-      }
+      },
+      "environmentVariables": [
+        {
+          "description": "xAI Grok API key for LLM-powered tools",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true,
+          "name": "XAI_API_KEY"
+        },
+        {
+          "description": "Solana wallet address for receiving USDC payments",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false,
+          "name": "PAYMENT_WALLET"
+        }
+      ]
     }
   ],
   "_meta": {
