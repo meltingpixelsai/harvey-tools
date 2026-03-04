@@ -5,6 +5,7 @@ import { createMcpPaidHandler } from "mcpay/handler";
 import { z } from "zod";
 import { config } from "./config.js";
 import { registerDiscoveryRoutes } from "./discovery.js";
+import { landingHtml, devHtml } from "./landing.js";
 import { scrapeUrl, screenshotUrl, extractStructuredData } from "./tools/scraping.js";
 import { reviewCode } from "./tools/code-review.js";
 import { generateContent } from "./tools/content.js";
@@ -239,6 +240,10 @@ app.get("/pricing", (c) => c.json(listTools()));
 
 // Agent discovery routes
 registerDiscoveryRoutes(app);
+
+// Landing pages for human visitors
+app.get("/", (c) => c.html(landingHtml()));
+app.get("/dev", (c) => c.html(devHtml()));
 
 // MCP handler — x402 only (no API key auth needed)
 app.all("*", async (c) => {
