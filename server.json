@@ -1,0 +1,30 @@
+{
+  "name": "io.github.meltingpixelsai/harvey-tools",
+  "description": "Web scraping, code review, content generation, and analysis tools for AI agents. Pay-per-call USDC.",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@meltingpixels/harvey-tools",
+      "transport": {
+        "type": "streamable-http",
+        "url": "https://tools.rugslayer.com/mcp"
+      }
+    }
+  ],
+  "_meta": {
+    "x402": {
+      "network": "solana",
+      "currency": "USDC",
+      "facilitator": "https://facilitator.payai.network",
+      "tools": {
+        "scrape_url": "$0.005",
+        "screenshot_url": "$0.005",
+        "extract_structured_data": "$0.02",
+        "review_code": "$0.03",
+        "generate_content": "$0.05",
+        "analyze_sentiment": "$0.01"
+      },
+      "free_tools": ["list_tools", "health"]
+    }
+  }
+}
