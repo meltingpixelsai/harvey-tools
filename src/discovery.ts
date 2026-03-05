@@ -23,6 +23,7 @@ export function registerDiscoveryRoutes(app: Hono): void {
       "Cache-Control": "public, max-age=3600",
       "Access-Control-Allow-Origin": "*",
     });
+app.get("/.well-known/mcp/server-card.json", (c) => {    return c.json(MCP_CARD, 200, {      "Cache-Control": "public, max-age=3600",      "Access-Control-Allow-Origin": "*",    });  });
   });
 }
 
