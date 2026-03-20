@@ -1,0 +1,4 @@
+.mcpregistry_*
+.env
+.env.*
+mcp-publisher.exe

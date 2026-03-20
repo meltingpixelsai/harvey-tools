@@ -6,12 +6,12 @@
     "url": "https://github.com/meltingpixelsai/harvey-tools",
     "source": "github"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@meltingpixels/harvey-tools",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "transport": {
         "type": "streamable-http",
         "url": "https://tools.rugslayer.com/mcp"

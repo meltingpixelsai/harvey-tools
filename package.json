@@ -1,6 +1,6 @@
 {
   "name": "@meltingpixels/harvey-tools",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "x402-paid MCP server for web scraping, code review, content generation, and analysis. Pay-per-call USDC on Solana.",
   "type": "module",
   "mcpName": "io.github.meltingpixelsai/harvey-tools",
