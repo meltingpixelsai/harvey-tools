@@ -13,46 +13,46 @@ interface SearchResponse {
   searched_at: string;
 }
 
-/** Search the web via Serper API and return organic results */
+/** Search the web via SerpAPI (Google) and return organic results */
 export async function searchWeb(
   query: string,
   numResults: number = 10
 ): Promise<SearchResponse> {
-  const apiKey = process.env.SERPER_API_KEY;
+  const apiKey = process.env.SERPAPI_KEY;
   if (!apiKey) {
-    throw new Error("SERPER_API_KEY not configured");
+    throw new Error("SERPAPI_KEY not configured");
   }
 
-  const res = await fetch("https://google.serper.dev/search", {
-    method: "POST",
-    headers: {
-      "X-API-KEY": apiKey,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ q: query, num: numResults }),
+  const params = new URLSearchParams({
+    q: query,
+    api_key: apiKey,
+    engine: "google",
+    num: String(numResults),
   });
+
+  const res = await fetch(`https://serpapi.com/search?${params.toString()}`);
 
   if (!res.ok) {
     const body = await res.text();
-    throw new Error(`Serper API error ${res.status}: ${body}`);
+    throw new Error(`SerpAPI error ${res.status}: ${body}`);
   }
 
   const data = (await res.json()) as {
-    organic?: Array<{ title: string; link: string; snippet: string; position: number }>;
-    answerBox?: { answer?: string; snippet?: string; title?: string };
-    searchParameters?: { q: string };
+    organic_results?: Array<{ title: string; link: string; snippet: string; position: number }>;
+    answer_box?: { answer?: string; snippet?: string; title?: string };
+    search_parameters?: { q: string };
   };
 
   return {
     query,
-    results: (data.organic ?? []).map((r) => ({
+    results: (data.organic_results ?? []).map((r) => ({
       title: r.title,
       link: r.link,
       snippet: r.snippet,
       position: r.position,
     })),
-    answer_box: data.answerBox ?? null,
-    total_results: data.organic?.length ?? 0,
+    answer_box: data.answer_box ?? null,
+    total_results: data.organic_results?.length ?? 0,
     searched_at: new Date().toISOString(),
   };
 }
