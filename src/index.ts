@@ -72,14 +72,14 @@ function health() {
 function registerFreeTools(server: any): void {
   server.tool(
     "list_tools",
-    "List all available Harvey Tools with pricing and input requirements. Use this for discovery.",
+    "List all available Zero Core Tools with pricing and input requirements. Use this for discovery.",
     {},
     async () => toolResult(listTools())
   );
 
   server.tool(
     "health",
-    "Check Harvey Tools server status, uptime, and payment network configuration.",
+    "Check Zero Core Tools server status, uptime, and payment network configuration.",
     {},
     async () => toolResult(health())
   );
@@ -275,7 +275,7 @@ app.all("*", async (c) => {
 // ── Start ────────────────────────────────────────────────────
 
 serve({ fetch: app.fetch, port: config.port }, () => {
-  console.log(`Harvey Tools MCP server running on port ${config.port}`);
+  console.log(`Zero Core Tools MCP server running on port ${config.port}`);
   console.log(`  MCP endpoint: http://localhost:${config.port}/`);
   console.log(`  Health: http://localhost:${config.port}/health`);
   console.log(`  Pricing: http://localhost:${config.port}/pricing`);

@@ -35,7 +35,7 @@ export function registerDiscoveryRoutes(app: Hono): void {
 }
 // ── Static Content ────────────────────────────────────────────
 
-const LLMS_TXT = `# Harvey Tools - General-Purpose Agent Tools MCP Server
+const LLMS_TXT = `# Zero Core Tools - General-Purpose Agent Tools MCP Server
 
 > MCP server for AI agents. Web scraping, screenshots, structured data extraction, code review, content generation, sentiment analysis.
 > Pay per call with USDC via x402 micropayments. No account needed.
@@ -71,7 +71,7 @@ const LLMS_TXT = `# Harvey Tools - General-Purpose Agent Tools MCP Server
 `;
 
 const AGENT_CARD = {
-  name: "Harvey Tools",
+  name: "Zero Core Tools",
   description:
     "MCP server for AI agents providing web scraping, screenshots, structured data extraction, code review, content generation, and sentiment analysis. Pay per call with USDC via x402.",
   version: "1.0.0",
@@ -172,7 +172,7 @@ const AGENT_CARD = {
 const MCP_CARD = {
   mcp_version: "2025-11-25",
   name: "harvey-tools",
-  display_name: "Harvey Tools - General-Purpose Agent Tools",
+  display_name: "Zero Core Tools - General-Purpose Agent Tools",
   description:
     "MCP server for AI agents. Web scraping, screenshots, structured data extraction, code review, content generation, and sentiment analysis. Pay per call with USDC via x402.",
   version: "1.0.0",
