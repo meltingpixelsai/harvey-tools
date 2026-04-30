@@ -1,15 +1,15 @@
 {
-  "name": "@meltingpixels/harvey-tools",
-  "version": "1.1.0",
-  "description": "x402-paid MCP server for web scraping, code review, content generation, and analysis. Pay-per-call USDC on Solana.",
+  "name": "@meltingpixels/zero-core-tools",
+  "version": "1.0.0",
+  "description": "x402-paid MCP server for web scraping, code review, content generation, and analysis. Pay-per-call USDC on Solana. Zero Core (formerly Harvey) Tools.",
   "type": "module",
-  "mcpName": "io.github.meltingpixelsai/harvey-tools",
-  "keywords": ["mcp", "x402", "usdc", "ai-agents", "web-scraping", "code-review", "content-generation", "sentiment-analysis"],
+  "mcpName": "io.github.meltingpixelsai/zero-core-tools",
+  "keywords": ["mcp", "x402", "usdc", "ai-agents", "web-scraping", "code-review", "content-generation", "sentiment-analysis", "zero-core"],
   "author": "MeltingPixels <jeremy@meltingpixels.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/meltingpixelsai/harvey-tools"
+    "url": "https://github.com/meltingpixelsai/zero-core-tools"
   },
   "homepage": "https://tools.rugslayer.com",
   "scripts": {
